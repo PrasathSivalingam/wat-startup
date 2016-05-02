@@ -168,6 +168,17 @@ module.exports = {
         exclude: 'node_modules',
         loader: 'style-loader!css-loader!sass-loader'
       },
+      
+       /*
+       * Less loader support for *.less files
+       *
+       * See: https://github.com/webpack/less-loader
+       */
+      {
+        test: /\.less$/,
+        exclude: 'node_modules',
+        loader: 'style-loader!css-loader!less-loader'
+      },
 
       /* Raw loader support for *.html
        * Returns file content as string
