@@ -157,6 +157,17 @@ module.exports = {
         test: /\.css$/,
         loader: 'raw-loader'
       },
+      
+      /*
+       * Sass loader support for *.scss files
+       *
+       * See: https://github.com/jtangelder/sass-loader
+       */
+      {
+        test: /\.scss$/,
+        exclude: 'node_modules',
+        loader: 'style-loader!css-loader!sass-loader'
+      },
 
       /* Raw loader support for *.html
        * Returns file content as string
