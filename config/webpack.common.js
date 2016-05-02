@@ -11,6 +11,7 @@ const helpers = require('./helpers');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /*
  * Webpack Constants
@@ -166,7 +167,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: 'node_modules',
-        loader: 'style-loader!css-loader!sass-loader'
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!sass-loader")
       },
       
        /*
@@ -177,7 +178,7 @@ module.exports = {
       {
         test: /\.less$/,
         exclude: 'node_modules',
-        loader: 'style-loader!css-loader!less-loader'
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!less-loader")
       },
 
       /* Raw loader support for *.html
@@ -256,7 +257,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'main'])
-    })
+    }),
+    
+    new ExtractTextPlugin("app.css")
 
   ],
 
