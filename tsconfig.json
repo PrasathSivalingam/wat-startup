@@ -1,0 +1,15 @@
+{
+    "exclude": [
+        "node_modules",
+        "typings/main.d.ts",
+        "typings/main"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true
+    },
+    "awesomeTypescriptLoaderOptions": {
+        "resolveGlobs": true,
+        "forkChecker": true
+    }
+}
