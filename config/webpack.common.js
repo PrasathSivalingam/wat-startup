@@ -167,7 +167,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: 'node_modules',
-        loader: ExtractTextPlugin.extract("style-loader","css-loader!sass-loader")
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!autoprefixer-loader!sass-loader")
       },
       
        /*
@@ -178,7 +178,7 @@ module.exports = {
       {
         test: /\.less$/,
         exclude: 'node_modules',
-        loader: ExtractTextPlugin.extract("style-loader","css-loader!less-loader")
+        loader: ExtractTextPlugin.extract("style-loader","css-loader!autoprefixer-loader!less-loader")
       },
 
       /* Raw loader support for *.html
