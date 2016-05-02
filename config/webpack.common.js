@@ -197,7 +197,7 @@ module.exports = {
        * See: https://github.com/webpack/url-loader  
       */
       {
-        test : /\.(png|jpg)$/,
+        test : /\.(png|jpg|ttf|eot)$/,
         exclude: /node_modules/,
         loader: 'url-loader?limit=10000'
       }
