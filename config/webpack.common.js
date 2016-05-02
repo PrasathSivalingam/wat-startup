@@ -190,6 +190,16 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
+      },
+      
+      /* Image loader support 
+       * 
+       * See: https://github.com/webpack/url-loader  
+      */
+      {
+        test : /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=10000'
       }
 
     ]
