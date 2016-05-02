@@ -269,6 +269,9 @@ module.exports = {
       chunksSortMode: helpers.packageSort(['polyfills', 'vendor', 'main'])
     }),
     
+    /* Extract css files
+     * Reference: https://github.com/webpack/extract-text-webpack-plugin
+    */
     new ExtractTextPlugin("app.css")
 
   ],
