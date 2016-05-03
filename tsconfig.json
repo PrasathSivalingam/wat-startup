@@ -5,11 +5,25 @@
         "typings/main"
     ],
     "compilerOptions": {
+        "target": "es5",
+        "sourceMap": true,
         "noImplicitAny": true,
-        "removeComments": true
+        "removeComments": true,
+        "experimentalDecorators": true
+       
     },
     "awesomeTypescriptLoaderOptions": {
         "resolveGlobs": true,
         "forkChecker": true
-    }
+    },
+    "filesGlob": [
+        "./src/**/*.ts",
+        "./test/**/*.ts",
+        "!./node_modules/**/*.ts",
+        "src/custom-typings.d.ts",
+        "typings/browser.d.ts"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": { "rewriteTsconfig": false }
 }
