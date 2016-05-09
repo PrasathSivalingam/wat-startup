@@ -50,8 +50,8 @@ export function main(initialHmrState?: any): Promise<any> {
  */
 if ('development' === ENV && HMR === true) {
   // activate hot module reload
-  //let ngHmr = require('angular2-hmr');
-  //ngHmr.hotModuleReplacement(main, module);
+  let ngHmr = require('angular2-hmr');
+  ngHmr.hotModuleReplacement(main, module);
 } else {
   // bootstrap when documetn is ready
   document.addEventListener('DOMContentLoaded', () => main());

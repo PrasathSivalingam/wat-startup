@@ -34,12 +34,12 @@ import * as _ from 'lodash'
 declare var ENV: string;
 declare var HMR: boolean;
 interface GlobalEnvironment {
- // ENV;
- // HMR;
+  ENV:any;
+  HMR:any;
 }
 
 interface WebpackModule {
- /* hot: {
+  hot: {
     data?: any,
     idle: any,
     accept(dependencies?: string | string[], callback?: (updatedDependencies?: any) => void): void;
@@ -51,7 +51,7 @@ interface WebpackModule {
     apply(options?: any, callback?: (err?: Error, outdatedModules?: any[]) => void): void;
     status(callback?: (status?: string) => void): void | string;
     removeStatusHandler(callback?: (status?: string) => void): void;
-  };*/
+  };
 }
 
 interface WebpackRequire {
@@ -59,15 +59,15 @@ interface WebpackRequire {
 }
 
 
-/*interface ErrorStackTraceLimit {
+interface ErrorStackTraceLimit {
   stackTraceLimit: number;
-}*/
+}
 
 
 
 // Extend typings
 interface NodeRequire extends WebpackRequire {}
-//interface ErrorConstructor extends ErrorStackTraceLimit {}
+interface ErrorConstructor extends ErrorStackTraceLimit {}
 interface NodeModule extends WebpackModule {}
 interface Global extends GlobalEnvironment  {}
 
